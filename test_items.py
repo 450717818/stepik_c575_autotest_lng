@@ -11,5 +11,6 @@ def test_exist_add_to_cart_button(browser):
     browser.get(link)
     # time.sleep(30) # для проверки по п.2
     # поиск кнопки добавления товара в корзину
-    WebDriverWait(browser, 3).until(EC.visibility_of_element_located((By.CLASS_NAME, "btn-add-to-basket")), "No add to cart button on page")
+    button_add_to_basket_visible=WebDriverWait(browser, 3).until(EC.visibility_of_element_located((By.CLASS_NAME, "btn-add-to-basket")), "No add to cart button on page")
+    assert button_add_to_basket_visible.is_displayed()
 
